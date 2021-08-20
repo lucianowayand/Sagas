@@ -9,7 +9,7 @@ class CadastroController < ApplicationController
             redirect_to conecte_se_path
         else
             redirect_to cadastro_url
-            puts "Ouch!"
+            puts "---------------------    Ouch!   ---------------------"
         end
     end
   

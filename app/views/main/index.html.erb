@@ -1,3 +1,95 @@
-<h3>Logado como <%= Current.usuario.login %></br>
+<div class="container mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <span onclick='document.getElementById("mySidenav").style.width = "12rem";'><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
+                        <path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/></svg></span>
+                
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick='document.getElementById("mySidenav").style.width = "0px";'>&times;</a>
+            <a class='color-light'><%= Current.usuario.nome %></a>
+            <%= link_to 'Github', "https://github.com/lucianowayand/Sagas" %>
+            <%= link_to 'Sair', logout_path, method: :delete %>
+        </div>
 
-<%= button_to 'logout', logout_path, method: :delete %>
+        
+            </div>
+            <div class="col", style="text-align: right;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/></svg>
+            </div>
+        </div>
+    </div>
+    <div class='container text-center'>
+    <a href="/conecte-se">
+            <button type="button" class="btn btn-light w-50 mt-4" style="border-radius:10px;color:var(--c1)">Adicionar item</button>
+        </a>
+    </div>
+    <div class=''>
+        <div class='container mt-4 pt-1'>
+            <p>Menu</p>
+            <div class="scrollbox">
+                <div class="card item container">
+                    <i class="bi bi-shop-window mt-4 menu-icons"></i>
+                    <p class='pt-1'>Home</p>
+                </div>
+                <div class="card item container">
+                    <i class="bi bi-check mt-4 menu-icons"></i>
+                    <p class='pt-1'>Lista</p>
+                </div>
+                <div class="card item container">
+                    <i class="bi bi-basket3 mt-4 menu-icons"></i>
+                    <p class='pt-1'>Estoque</p>
+                </div>
+                <div class="card item">
+                    <i class="bi bi-clock mt-4 menu-icons"></i>
+                    <p class='pt-1'>Vencimento</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='container mt-4 pt-1'>
+            <p>Itens em Casa</p>
+            <div class="scrollbox">
+                <div class="card food">
+                    <i class="bi bi-shop-window mt-4 menu-icons"></i>
+                    <p class='pt-1'>Home</p>
+                </div>
+                <div class="card food">
+                    <i class="bi bi-check mt-4 menu-icons"></i>
+                    <p class='pt-1'>Lista</p>
+                </div>
+                <div class="card food">
+                    <i class="bi bi-basket3 mt-4 menu-icons"></i>
+                    <p class='pt-1'>Estoque</p>
+                </div>
+                <div class="card food">
+                    <i class="bi bi-clock mt-4 menu-icons"></i>
+                    <p class='pt-1'>Vencimento</p>
+                </div>
+            </div>
+        </div>
+
+<div class='container mt-4 pt-1'>
+            <p>Itens em Casa</p>
+            <div class="scrollbox">
+                <div class="card food">
+                    <i class="bi bi-shop-window mt-4 menu-icons"></i>
+                    <p class='pt-1'>Home</p>
+                </div>
+                <div class="card food">
+                    <i class="bi bi-check mt-4 menu-icons"></i>
+                    <p class='pt-1'>Lista</p>
+                </div>
+                <div class="card food">
+                    <i class="bi bi-basket3 mt-4 menu-icons"></i>
+                    <p class='pt-1'>Estoque</p>
+                </div>
+                <div class="card food">
+                    <i class="bi bi-clock mt-4 menu-icons"></i>
+                    <p class='pt-1'>Vencimento</p>
+                </div>
+            </div>
+        </div>
+    <div>
+</div>

@@ -2,8 +2,7 @@ class FrontController < ApplicationController
   
     def index
         if session[:user_id]
-            @usuario = Usuario.find(session[:user_id])
-            #redirect_to root_path
+            redirect_to main_path       
         end
     end
   

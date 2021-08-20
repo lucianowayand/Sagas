@@ -1,0 +1,25 @@
+<!--
+    
+    nome  : String
+    login : String
+    senha : String
+    
+-->
+
+<div class="container tela-cheia text-center">
+    <div>
+        <h1 class="display-1 mb-5" style="color:var(--c1)">SAGA's</h1>
+        <%= form_with url: '/conecte-se' do |form| %>
+            <div class="mb-4">
+                <%= form.email_field :login, placeholder:"Email", class:"btn btn-outline-secondary w-50 mt-4", style:"border-radius:10px" %>
+            </div>
+            <div class="mb-4">
+                <%= form.password_field :senha, placeholder:"Senha", class:"btn btn-outline-secondary w-50 mt-4", style:"border-radius:10px" %>
+            </div>
+
+            <div class="mb-4">
+                <%= form.submit "SIGN IN", class:"btn btn-light text-light w-50 mt-4 tela-1", style:"border-radius:10px"%>
+            </div>
+        <% end %>
+    </div>
+</div>

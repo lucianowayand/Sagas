@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  validade: 2021-08-25
+  quantidadeEstoque: 1.5
+
+two:
+  validade: 2021-08-25
+  quantidadeEstoque: 1.5

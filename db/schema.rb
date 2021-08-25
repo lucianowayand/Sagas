@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_14_181042) do
+ActiveRecord::Schema.define(version: 2021_08_25_193319) do
+
+  create_table "produto_estoques", force: :cascade do |t|
+    t.date "validade"
+    t.float "quantidadeEstoque"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "produtos", force: :cascade do |t|
+    t.string "nome"
+    t.float "quantidade"
+    t.string "tipo"
+    t.boolean "recomendado"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.string "login"

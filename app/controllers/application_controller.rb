@@ -6,5 +6,5 @@ class ApplicationController < ActionController::Base
           Current.usuario = Usuario.find(session[:user_id])
         end
     end
-
+     
 end

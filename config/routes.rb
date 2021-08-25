@@ -13,5 +13,9 @@ Rails.application.routes.draw do
   get 'conecte-se', to:'conecte#index'
   post 'conecte-se', to:'usuario#validarUsuario'
   
+  get 'compras', to:'compras#index'
 
+  get 'estoque', to:'estoque#index'
+
+  get 'vencimento', to:'vencimento#index'
 end

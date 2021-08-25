@@ -1,0 +1,2 @@
+class ProdutoEstoque < ApplicationRecord
+end

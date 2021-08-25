@@ -12,3 +12,9 @@
 * Verificar estura de modos
 * Morador ou usuário?
 * Periodicamente verificar vencidos? Fazer uma vez ao montar a visualização de vencidos
+
+
+* No banco de dados dos itens tem um campo recomendado que não é necessario
+* Itens possuem valores em float desnecessáriamente
+* Diagrama de classes produto e produto estoque são redundantes
+* Não existe referencia para armazenamento de imagem

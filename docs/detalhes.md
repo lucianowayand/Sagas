@@ -18,3 +18,7 @@
 * Itens possuem valores em float desnecessáriamente
 * Diagrama de classes produto e produto estoque são redundantes
 * Não existe referencia para armazenamento de imagem
+* Discriminação do botão adicionar item
+
+
+* Duas telas de categorias de estoque

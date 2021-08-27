@@ -7,6 +7,7 @@
                 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick='document.getElementById("mySidenav").style.width = "0px";'>&times;</a>
+            <%= link_to 'Home', "/main" %>
             <a class='color-light'><%= Current.usuario.nome %></a>
             <%= link_to 'Github', "https://github.com/lucianowayand/Sagas" %>
             <%= link_to 'Sair', logout_path, method: :delete %>
@@ -21,7 +22,7 @@
         </div>
     </div>
     <div class='container text-center'>
-    <a href="/conecte-se">
+    <a href="/selecao-adicao">
             <button type="button" class="btn btn-light w-50 mt-4" style="border-radius:10px;color:var(--c1)">Adicionar item</button>
         </a>
     </div>
@@ -43,7 +44,7 @@
                 </div>
                 <div>
                     <a href='/estoque' class="card item container">
-                    <i class="bi bi-basket3 mt-4 menu-icons"></i>
+                    <i class="bi bi-basket3 mt-4 menu-icons "></i>
                     <p class='pt-1'>Estoque</p>
                     </a>
                 </div>
@@ -55,3 +56,39 @@
                 </div>
             </div>
         </div>
+
+    <div class="mt-5">
+        <% if ProdutoEstoque.all.count != 0%>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Vence em:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <% ProdutoEstoque.all.each do |produto| %>
+                            <% if (Date.today - produto.validade) > 0%>
+                                <tr class="bg-danger">
+                                    <td><%= produto.nome %></td>
+                                    <td><%= produto.quantidade.to_int %></td>
+                                    <td><p>Expirado!</p></td>
+                                </tr>
+                            <% else %>
+                                <tr>
+                                    <td><%= produto.nome %></td>
+                                    <td><%= produto.quantidade.to_int %></td>
+                                    <td><%= distance_of_time_in_words(Date.today,produto.validade) %></td>
+                                </tr>
+                            <% end %>
+                        <%end%>
+                </tbody>
+            </table>
+        <% else %>
+            <div class="container text-center">
+                <p class='pt-5'>Acho melhor dar uma passadinha no mercado 😞</p>
+            </div> 
+        <% end %>
+    </div>
+</div>

@@ -7,6 +7,7 @@
                 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick='document.getElementById("mySidenav").style.width = "0px";'>&times;</a>
+            <%= link_to 'Home', "/main" %>
             <a class='color-light'><%= Current.usuario.nome %></a>
             <%= link_to 'Github', "https://github.com/lucianowayand/Sagas" %>
             <%= link_to 'Sair', logout_path, method: :delete %>
@@ -21,7 +22,7 @@
         </div>
     </div>
     <div class='container text-center'>
-    <a href="/conecte-se">
+    <a href="/selecao-adicao">
             <button type="button" class="btn btn-light w-50 mt-4" style="border-radius:10px;color:var(--c1)">Adicionar item</button>
         </a>
     </div>
@@ -57,46 +58,38 @@
         </div>
     <div class='home-selection'>
         <div class='container mt-4 pt-1'>
-                <p>Itens em Casa</p>
+            <p>Itens em Casa</p>
+            <% if ProdutoEstoque.all.count != 0%>
                 <div class="scrollbox">
-                    <div class="card food">
-                        <i class="bi bi-shop-window mt-4 menu-icons"></i>
-                        <p class='pt-1'>Cenoura</p>
-                    </div>
-                    <div class="card food">
-                        <i class="bi bi-check mt-4 menu-icons"></i>
-                        <p class='pt-1'>Lista</p>
-                    </div>
-                    <div class="card food">
-                        <i class="bi bi-basket3 mt-4 menu-icons"></i>
-                        <p class='pt-1'>Estoque</p>
-                    </div>
-                    <div class="card food">
-                        <i class="bi bi-clock mt-4 menu-icons"></i>
-                        <p class='pt-1'>Vencimento</p>
-                    </div>
+                    <% ProdutoEstoque.all.each do |produto| %>
+                        <div class="card food">
+                            <p class='pt-5'><%= produto.quantidade.to_int %></p>
+                            <p class='pt-1'><%= produto.nome %></p>
+                        </div>
+                    <% end %>
                 </div>
-            </div>
+            <% else %>
+                <div class="container text-center">
+                    <p class='pt-5'>Acho melhor dar uma passadinha no mercado 😞</p>
+                </div>    
+            <% end %>
+        </div>
         <div>
         <div class='container mt-4 pt-1'>
-            <p>Itens em Casa</p>
-            <div class="scrollbox">
-                <div class="card food">
-                    <i class="bi bi-shop-window mt-4 menu-icons"></i>
-                    <p class='pt-1'>Batata</p>
+            <p>Itens para Compra</p>
+            <% if Produto.all.count != 0%>
+                <div class="scrollbox">
+                    <% Produto.all.each do |produto| %>
+                        <div class="card food">
+                            <p class='pt-5'><%= produto.quantidade.to_int %></p>
+                            <p class='pt-1'><%= produto.nome %></p>
+                        </div>
+                    <% end %>
                 </div>
-                <div class="card food">
-                    <i class="bi bi-check mt-4 menu-icons"></i>
-                    <p class='pt-1'>Lista</p>
-                </div>
-                <div class="card food">
-                    <i class="bi bi-basket3 mt-4 menu-icons"></i>
-                    <p class='pt-1'>Estoque</p>
-                </div>
-                <div class="card food">
-                    <i class="bi bi-clock mt-4 menu-icons"></i>
-                    <p class='pt-1'>Vencimento</p>
-                </div>
-            </div>
+            <% else %>
+                <div class="container text-center">
+                    <p class='pt-5'>Não existem produtos para compra!</p>
+                </div>    
+            <% end %>
         </div>
 </div>

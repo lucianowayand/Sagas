@@ -9,7 +9,7 @@
 <div class="container tela-cheia text-center">
     <div>
         <h1 class="display-1 mb-5" style="color:var(--c1)">SAGA's</h1>
-        <%= form_with model: @usuario, url: cadastro_path do |form| %>
+        <%= form_with model: @produto, url: cadastro_path do |form| %>
             <div class="mb-4">
                 <%= form.text_field :nome, placeholder:"Nome", class:"btn btn-outline-secondary w-50 mt-4", style:"border-radius:10px" %>
             </div>

@@ -18,4 +18,12 @@ Rails.application.routes.draw do
   get 'estoque', to:'estoque#index'
 
   get 'vencimento', to:'vencimento#index'
+
+  get 'selecao-adicao', to:'selecao#index'
+  get 'adicao-estoque', to:'produtos#index'
+  get 'adicao-lista', to:'lista#index'
+
+
+  post 'add_lista', to: 'lista#addProduto', as: 'add_lista'
+  post 'add_estoque', to: 'produtos#addProduto', as: 'add_estoque'
 end
